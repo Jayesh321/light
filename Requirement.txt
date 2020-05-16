@@ -1,0 +1,4 @@
+Python - 3.7.7 (python --version)
+django - 3.0.5 (Command--> import django ----> print(django.get_version()) (in cmd))
+crispy form - 1.9.0 ( pip install django-crispy-forms)
+Bootstrap Theme- startbootstrap-agency-gh-pages(bootstrap4)

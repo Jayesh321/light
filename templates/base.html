@@ -32,6 +32,13 @@
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Team</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
+                        {% if user.is_authenticated %}
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'accounts:logout_url' %}">Logout</a></li>
+                        {% else %}
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'accounts:signup_url' %}">SignUp</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'accounts:login_url' %}">Login</a></li>
+                        {% endif %}
+                        
                     </ul>
                 </div>
             </div>
