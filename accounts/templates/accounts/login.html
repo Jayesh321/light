@@ -3,10 +3,18 @@
 
 {% block body %}
 <div class="container">
-<form method="post">
-{% csrf_token %}
-{{form|crispy}}
-<input type="submit" class="btn btn-primary" value="Login">
+    <div class="cotent-section">
+<form method="POST">
+<fieldset class="form-group">
+    <legend class="border-bottom mb-4"> <h2>LogIn</h2></legend>
+    {% csrf_token %}
+{{ form|crispy }}
+</fieldset>
+
+<div class="form-group">
+<button class="btn btn-outline-info" >Login</button >
+</div>
 </form>
+</div>
 </div>
 {% endblock %}

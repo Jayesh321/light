@@ -5,14 +5,20 @@
 
     {% block body %}
     <div class="container">
-        <!--<div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto  form p-4">-->
-    <h1>Signup</h1>
-    <form method="post">
+        <div class="cotent-section">
+    <form method="POST">
+    <fieldset class="form-group">
+        <legend class="border-bottom mb-4"> <h2>SignUp</h2></legend>
         {% csrf_token %}
-        {{ form|crispy }}
-        <input type="submit" class="btn btn-primary" value="SignUp">
+    {{ form|crispy }}
+    </fieldset>
+    
+    <div class="form-group">
+    <button class="btn btn-outline-info" >signup</button >
+    </div>
     </form>
-<!--</div>-->
-</div>
+    </div>
+    </div>
+
 
 {% endblock %}
