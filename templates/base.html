@@ -35,6 +35,7 @@
                         {% if user.is_authenticated %}
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'accounts:logout_url' %}">Logout</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" >Welcome {{ user.username }}</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'accounts:password_change_url' %}">Change Password</a></li>
                         {% else %}
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'accounts:login_url' %}">Login</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'accounts:signup_url' %}">SignUp</a></li>
