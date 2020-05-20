@@ -5,20 +5,12 @@
 
     {% block body %}
     <div class="container">
-        <div class="cotent-section">
-    <form method="POST">
-    <fieldset class="form-group">
-        <legend class="border-bottom mb-4"> <h2>SignUp</h2></legend>
-        {% csrf_token %}
-    {{ form|crispy }}
-    </fieldset>
-    
-    <div class="form-group">
-    <button class="btn btn-outline-info" >signup</button >
+        <h1>Signup</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <input type="submit" class="btn btn-primary" value="Signup">
+            <!-- <a type="submit" class="btn btn-primary" href="{% url 'accounts:login_url' %}">signup</a> -->
+        </form>
     </div>
-    </form>
-    </div>
-    </div>
-
-
 {% endblock %}
