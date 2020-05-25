@@ -16,7 +16,12 @@
             <div class="form-group">
                 <button class="btn btn-outline-info">Login</button>
             </div>
+
+            <small class="text-muted">
+                <a class="ml-0" href="{% url 'accounts:password_reset_url' %}">Forget Password</a>
+               </small>
         </form>
     </div>
 </div>
+
 {% endblock %}

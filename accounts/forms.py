@@ -6,7 +6,7 @@ class UserCreateForm(UserCreationForm):
 
     class Meta:
         model = get_user_model()
-        fields =['username', 'password1', 'password2' ]
+        fields = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2')
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

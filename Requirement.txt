@@ -3,6 +3,6 @@ django - 3.0.5 (Command--> import django ----> print(django.get_version()) (in c
 crispy form - 1.9.0 ( pip install django-crispy-forms)
 Bootstrap Theme- startbootstrap-agency-gh-pages(bootstrap4)
 admin- light
-pwd- Jayesh@72072
+pwd- Bharat@72072
 pythonanywhere- jayesh313
 pwd- Jayesh@72072

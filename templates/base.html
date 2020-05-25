@@ -18,6 +18,10 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
         
+        {% block customer_css %}
+        <link rel="stylesheet" href="{% static 'css/home.css' %}">
+        {% endblock %}
+        
 
     </head>
     <body>
@@ -33,13 +37,35 @@
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Team</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
                         {% if user.is_authenticated %}
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'accounts:logout_url' %}">Logout</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" >Welcome {{ user.username }}</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'accounts:password_change_url' %}">Change Password</a></li>
+                        <!-- <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'accounts:logout_url' %}">Logout</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'accounts:password_change_url' %}">Change Password</a></li> -->
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Welcome {{ user.username }}
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <a class="dropdown-item" href="{% url 'accounts:logout_url' %}">Logout</a>
+                              <a class="dropdown-item" href="#">blog</a>
+                              <a class="dropdown-item" href="{% url 'accounts:password_change_url' %}">Change Password</a>
+                            </div>
+                          </div>
                         {% else %}
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'accounts:login_url' %}">Login</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'accounts:signup_url' %}">SignUp</a></li>
                         {% endif %}
+                        
+                        <!-- Dropdown -->
+
+                        <!-- <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Welcome {{ user.username }}
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <a class="dropdown-item" href="{% url 'accounts:logout_url' %}">Action</a>
+                              <a class="dropdown-item" href="#">blog</a>
+                              <a class="dropdown-item" href="{% url 'accounts:password_change_url' %}">Change Password</a>
+                            </div>
+                          </div> -->
                         
                     </ul>
                 </div>
