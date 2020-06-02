@@ -2,7 +2,25 @@
 {% load crispy_forms_tags %}
 
 {% block body %}
-<div class="container">
+
+<div class="container col-md-8">
+    
+    <form method="POST" style="border: 1px solid black; margin: 4%; padding:6%; border-radius:1%;">
+      {% csrf_token %}
+      <fieldset class="form-group">
+        {{ form|crispy}}
+      </fieldset>
+     <center>
+      <button style="background: black; font-size: 1.5rem; padding:0.5%;" class="btn btn-outline-info" type="submit">Login</button>
+    </center>
+    <br/>
+    <sub style="text-align: left;"><a href="{% url 'accounts:password_reset_url' %}" style="text-decoration: none; color: blue; padding:2%; cursor:pointer; margin-right:2%;">forget password</a></sub>
+    <sub style="text-align: left;"><a href="{% url 'accounts:signup_url' %}" style="text-decoration: none; color: blue; padding:2%; cursor:pointer; margin-right:2%;">don't have account,sign up</a></sub>
+    
+</form>
+   </div>
+
+<!-- <div class="container">
     <div class="cotent-section">
         <form method="POST">
             <fieldset class="form-group">
@@ -22,6 +40,6 @@
                </small>
         </form>
     </div>
-</div>
+</div> -->
 
 {% endblock %}
